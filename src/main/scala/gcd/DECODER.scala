@@ -19,16 +19,16 @@ import chisel3.experimental._ // To enable experimental features
 
 
 // module名必须与class名一致，区分大小写
-class MVER extends BlackBox with HasBlackBoxInline{
+class M_BlackBoxInline extends BlackBox with HasBlackBoxInline{
   val io = IO(new Bundle() {
     val ver_in = Input(UInt(3.W))
     // val in2 = Input(UInt(64.W))
     val ver_out = Output(UInt(8.W))
   })
 //   addResource("mver.v")
-    setInline("mver0.v",    
+    setInline("M_BlackBoxInline.v",    // 运行过程中会在输出文件夹中生成以此命名的verilog文件
     s"""
-        |module MVER(
+        |module M_BlackBoxInline(
         |    input reg [2:0] ver_in,
         |    output reg [7:0] ver_out
         |);
