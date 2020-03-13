@@ -5,3 +5,5 @@ sbt:
 	${SBT} 'test:runMain gcd.GCDMain --generate-vcd-output on'
 ver:
 	${SBT} 'test:runMain gcd.DECODERMain --backend-name verilator'
+clean:
+	${SBT} clean
